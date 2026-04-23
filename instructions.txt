@@ -1,0 +1,28 @@
+1. Objective  
+This work ( a proof-of-concept study) is to use AI-agent to create a lab protocol (step-by-step procedures/instructions for the technician) given two inputs: assay protocol, the list of samples to be processed. 
+At this stage, we are good to take care of everything within Codex. Once we prove that it works, we may want to create a more independent application.
+
+See the file under folder background to better understand the objective.
+
+2. About the Input
+At present, the input assay protocol is in the form of Instruction for Use, or User Guide along with the relevant documentation.
+The list of samples to be processed is not fixed. It can vary from day to day and that is why we want to automated the protocol to step-by-step instructions translation.
+
+See the files under input/example-assay-documents to better understand the output.
+
+3. The output: 
+3.1. A list of step-by-step instructions for the technician following the industry standard; 
+3.2. An excel spreadsheet with such step-by-step procedures/instructions included but enhanced with Excel formula that allows the technician to dynamically update the step-by-step procedures/instructions). 
+
+I believe that 3.2) is doable but please let me know if you   don't think so (you need to justify it).
+
+See the email thread and paper under folder Background to better understand the  
+
+4. Limitations
+I don't have a large number of documents as internal knowledge base to support this work, but please let me know if you find useful and free MCP servers that can help this work. I will see if I can configure such MCP servers. 
+
+5. The above is my initial plan. Please read the background and review the input data to understand what we want to achieve. Share your suggestions about the above plan and we will revise it to something executable. 
+A final note: the paper in the background paper is a good reference in that it uses OpenAI as a reasoning engine while modeling the instruments and chemistry constraint by Pydantic library. For this work, the constraints can be largely extracted from the pdf version Instruction for Use or User Guide. 
+ 
+ 
+
