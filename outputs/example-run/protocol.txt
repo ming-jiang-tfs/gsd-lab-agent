@@ -1,0 +1,88 @@
+Assay: SEC-SEQK-PI-EN-01_RUO
+Instrument: ABI_3500xL
+Total samples: 3
+Source document: /Users/jiangm1/Documents/RnD/Lab-Agent-2026-4-17/gsd-lab-agent/input/example-assay-documents/SeCoreHLA_Assay/SeCoreHLA_kit_IFU_PI_QuickRef_OneLambda_MfgUserGuides/SEC-SEQK-PI-EN-01_RUO.pdf
+
+Step-by-step protocol
+
+Step 1: Prepare purified DNA samples
+Stage: Sample Preparation
+Prepare purified DNA for all 3 samples at 15-30 ng/uL. Use molecular-biology-grade water only for immediate use aliquots and discard those aliquots after use.
+Details:
+- dna concentration: 15-30 ng/uL
+- notes: Do not use Heparinized samples.
+- sample scope: all_samples
+
+Step 2: Prepare amplification master mix
+Stage: Amplification
+Prepare amplification master mix for 3 samples plus controls using the assay-specific Amp Mix and FastStart Taq DNA Polymerase volumes from the assay document.
+Details:
+- class i per reaction: 19.8 uL Amp Mix + 0.2 uL Taq
+- class ii per reaction: 22.8 uL Amp Mix + 0.2 uL Taq
+- notes: Note: For 25 Test kits, it is recommended that a master mix for a minimum of 5 reactions be prepared at one time to aid in the accuracy of pipetting small volumes of enzyme. | Note: For 500 test kits, prepare a master mix for a minimum of 20 samples to limit the amount of inadvertent enzyme loss during pipetting. | Due to the viscous nature of FastStart Taq Polymerase, care should be taken to remove excess Taq that remains on the pipette tip before dispensing the enzyme into the master mix.
+- reagents: Amp Mix; FastStart Taq DNA Polymerase
+
+Step 3: Run PCR amplification
+Stage: Amplification
+Set up PCR reactions for 3 samples and run the amplification profile described in the IFU.
+Details:
+- class i dna input: 5 uL
+- class i reaction volume: 25 uL
+- class ii dna input: 2 uL
+- class ii reaction volume: 25 uL
+- thermal profile: 95C 4 min; 35 cycles of 95C 20 sec, 63C 20 sec, 72C 40 sec; 72C 5 min; 4C hold
+
+Step 4: Confirm PCR products by agarose gel electrophoresis
+Stage: Amplification QC
+Load 5 uL of PCR product plus loading dye on a 2.0% agarose gel to confirm amplification before purification.
+Details:
+- expected product sizes: A ~1200/~990; B ~1400/~950; C ~1375/~1600; DRB1 ~300; DRB1 exon2 ~500-850 exon3 ~450; DRB Group ~300/~600 IC; DQB1 ~350/~375; DPB1 ~300/~1000
+- gel percentage: 2.0%
+- loaded volume: 5 uL
+
+Step 5: Purify PCR amplicons with ExoSAP-IT
+Stage: Purification
+Add ExoSAP-IT to amplified products, mix thoroughly, and run the cleanup thermal profile before sequencing setup.
+Details:
+- cleanup profile: 37C 20 min; 80C 20 min; 4C hold
+- depends on: agarose-gel
+- exosap it volume: 4 uL
+
+Step 6: Prepare sequencing reactions
+Stage: Sequencing Reaction
+Set up sequencing reactions using the purified amplicons, adding 2 uL amplicon and 8 uL sequencing mix to each reaction well. For Class II reactions only, add 40 uL ultrapure water before sequencing setup.
+Details:
+- amplicon per reaction: 2 uL
+- class ii water addition: 40 uL
+- depends on: exosap-purification
+- sequencing mix per reaction: 8 uL
+- sequencing profile: 25 cycles of 95C 20 sec, 50C 15 sec, 60C 60 sec; 4C hold
+
+Step 7: Perform ethanol precipitation
+Stage: Sequencing Cleanup
+Perform ethanol precipitation on each sequencing reaction before capillary electrophoresis.
+Details:
+- centrifuge inverted: 1 min at 500 x g
+- centrifuge primary: 30 min at 2,000 x g or greater
+- depends on: sequencing-setup
+- ethanol 100 percent volume: 40 uL
+- ethanol wash concentration: 70%-80%
+- ethanol wash volume: 100 uL
+- ppt buffer volume: 2 uL
+
+Step 8: Prepare loading samples and run instrument
+Stage: Capillary Sequencing
+Resuspend each pellet in Hi-Di Formamide, denature at 95C for 2 min, then load onto the selected sequencing instrument.
+Details:
+- denaturation: 95C for 2 min
+- depends on: ethanol-precipitation
+- hi di formamide volume: 15 uL
+- instrument parameters: injection time=Default; run module=StdSeq50; run time=3780 sec
+
+Step 9: Analyze sequence data
+Stage: Analysis
+Process raw data with Sequencing Analysis software and create HLA typing reports with One Lambda uTYPE software.
+Details:
+- database note: Use the most recent IMGT allele database for analysis.
+- depends on: capillary-loading
+- software: Sequencing Analysis software; One Lambda uTYPE HLA Sequence Analysis Software
