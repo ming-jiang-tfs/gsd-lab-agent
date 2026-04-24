@@ -5,6 +5,9 @@
 - `v1` supports only `SeCore HLA` as the proof-of-concept assay.
 - The pipeline should still be assay-agnostic so that a very different assay can be supported later without rewriting the core logic.
 - Input is a `CSV` sample list with the columns `number`, `sample_id`, and `sample_name`.
+- The authoritative assay source for `v1` is `input/example-assay-documents/SeCoreHLA_Assay/SeCoreHLA_kit_IFU_PI_QuickRef_OneLambda_MfgUserGuides/SEC-SEQK-PI-EN-01_RUO.pdf`.
+- Other assay PDFs and the unrelated PCP Word document have been intentionally removed from the v1 source set to avoid version confusion.
+- The sequencing instrument is an explicit additional input. For `v1`, assume `ABI 3500xL`.
 - Output is a technician-facing `protocol.csv` intended for practical in-lab execution.
 - The pipeline should attempt direct `PDF -> protocol` generation, while keeping intermediate artifacts available for review if results look wrong.
 
