@@ -8,7 +8,7 @@ from .extractors import build_extractor
 from .models import InstrumentId
 from .pdf_ingestion import load_assay_document
 from .protocol_generator import generate_protocol
-from .renderers import write_assay_spec_json, write_protocol_csv, write_protocol_json
+from .renderers import write_assay_spec_json, write_protocol_csv, write_protocol_json, write_protocol_text
 
 
 def main() -> None:
@@ -30,10 +30,12 @@ def main() -> None:
 
     write_assay_spec_json(output_dir / "assay_spec.json", assay_spec)
     write_protocol_json(output_dir / "protocol.json", protocol)
+    write_protocol_text(output_dir / "protocol.txt", protocol)
     fieldnames = write_protocol_csv(output_dir / "protocol.csv", protocol)
 
     print(f"Wrote assay spec to {output_dir / 'assay_spec.json'}")
     print(f"Wrote protocol JSON to {output_dir / 'protocol.json'}")
+    print(f"Wrote protocol text to {output_dir / 'protocol.txt'}")
     print(f"Wrote protocol CSV to {output_dir / 'protocol.csv'}")
     print(f"Dynamic CSV headers: {', '.join(fieldnames)}")
     if protocol.validation_issues:
